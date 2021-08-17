@@ -1,5 +1,19 @@
 <template>
   <div>
-    <h1>This is Pet component</h1>
+    {{$route.params.species}}
+    {{$route.params.id}}
   </div>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  data () {
+    return {}
+  },
+  computed: {
+    ...mapState(['cats', 'dogs'])
+  }
+}
+</script>
