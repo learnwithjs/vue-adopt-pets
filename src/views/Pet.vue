@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>This is Pets component</h1>
+    <h1>This is Pet component</h1>
   </div>
 </template>
