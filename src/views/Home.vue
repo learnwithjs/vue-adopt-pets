@@ -80,6 +80,14 @@ export default {
         }
       }
       this.addPet(payload)
+
+      //reset Form
+      this.formData = {
+        name: '',
+        age: 0,
+        gender: null,
+        species: null
+      }
     }
   }
 }
