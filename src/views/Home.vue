@@ -2,7 +2,15 @@
 <template>
   <div class="home">
     <h1>Adopt a new best friend.</h1>
-    <p>{{ animalsCount }}</p>
+    <div>
+      <p>
+        <b>Total Cats count</b> : <span> {{ getAllCats.length }}</span>
+      </p>
+    </div>
+
+    <p>
+      <b>Total Pets Count</b> : <span>{{ animalsCount }}</span>
+    </p>
     <button @click="togglePetForm" class="btn btn-primary">Add New Pet</button>
 
     <b-form @submit.prevent="handleSubmit" v-if="showPetForm">
@@ -65,7 +73,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['animalsCount'])
+    ...mapGetters(['animalsCount', 'getAllCats'])
   },
   methods: {
     ...mapActions(['addPet']),
