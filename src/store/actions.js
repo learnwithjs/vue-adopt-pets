@@ -1,5 +1,5 @@
 export default {
-  addPet: ({ commit }, pet) => {
-    commit('appentPet', pet)
+  addPet: ({ commit }, payload) => {
+    commit('appendPet', payload)
   }
 }
