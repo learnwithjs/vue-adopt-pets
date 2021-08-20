@@ -6,6 +6,10 @@
       <p>
         <b>Total Cats count</b> : <span> {{ getAllCats.length }}</span>
       </p>
+      <br />
+      <p>
+        <b>Total Dogs count</b> : <span> {{ getAllDogs }}</span>
+      </p>
     </div>
 
     <p>
@@ -73,7 +77,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['animalsCount', 'getAllCats'])
+    ...mapGetters(['animalsCount', 'getAllCats', 'getAllDogs'])
   },
   methods: {
     ...mapActions(['addPet']),
