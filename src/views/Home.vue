@@ -54,6 +54,24 @@
         ></b-form-select>
       </b-form-group>
 
+      <b-form-group id="input-group-5" label="Breed:" label-for="input-5">
+        <b-form-input
+          id="input-5"
+          v-model="formData.breed"
+          placeholder="Enter Pet's Breed"
+          required
+        ></b-form-input>
+      </b-form-group>
+
+      <b-form-group id="input-group-6" label="Pet's Color:" label-for="input-6">
+        <b-form-input
+          id="input-6"
+          v-model="formData.color"
+          placeholder="Enter Pet's color"
+          required
+        ></b-form-input>
+      </b-form-group>
+
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
@@ -72,7 +90,9 @@ export default {
         name: '',
         age: 0,
         gender: null,
-        species: null
+        species: null,
+        breed: null,
+        color: null
       }
     }
   },
@@ -85,14 +105,16 @@ export default {
       this.showPetForm = !this.showPetForm
     },
     handleSubmit() {
-      const { species, age, name, gender } = this.formData
+      const { species, age, name, gender, breed, color } = this.formData
 
       const payload = {
         species,
         pet: {
           name,
           age,
-          gender
+          gender,
+          breed,
+          color
         }
       }
       this.addPet(payload)
@@ -108,3 +130,16 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.form-control {
+  margin: 10px;
+}
+.btn {
+  margin: 10px;
+}
+
+.d-block {
+  margin-bottom: 10px;
+}
+</style>
