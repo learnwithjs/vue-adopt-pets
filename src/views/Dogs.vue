@@ -1,19 +1,17 @@
 <template>
   <div>
-    <h1>Dogs for Adoption</h1>
-    <b-table stripped :items="dogs">
-      <template #cell(name)="data">
-        <router-link :to="`/pets/dogs/${data.index}`">{{ data.value }}</router-link>
-      </template>
-    </b-table>
+    <PetTable species="Dogs" :pets="dogs" />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-
+import PetTable from '@/components/PetTable.vue'
 export default {
-  data () {
+  components: {
+    PetTable
+  },
+  data() {
     return {}
   },
   computed: {
